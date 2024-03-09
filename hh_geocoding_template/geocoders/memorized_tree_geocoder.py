@@ -19,5 +19,6 @@ class MemorizedTreeGeocoder(Geocoder):
                 for city in subject.areas:
                     self.d[city.id] = [country.name, subject.name, city.name]
     def _apply_geocoding(self, area_id: str) -> str:
+        area_id = str(area_id)
         return ", ".join(self.d[area_id])
 

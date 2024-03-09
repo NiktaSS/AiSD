@@ -11,6 +11,7 @@ class SimpleTreeGeocoder(Geocoder):
         else:
             self.__data = data
     def _find(self, area_id: str) -> str:
+        area_id = str(area_id)
         for country in self.__data:
             if country.id == area_id:
                 return [country]
@@ -25,8 +26,7 @@ class SimpleTreeGeocoder(Geocoder):
         return ", ".join(x.name for x in f)
 
 
-
-        """
+"""
             TODO:
             - Сделать перебор дерева для каждого area_id
             - В ходе перебора возвращать массив элементов, состоящих из TreeNode необходимой ветки
